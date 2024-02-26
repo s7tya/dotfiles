@@ -145,6 +145,8 @@ require("lazy").setup({
     -- wakatime
     { 'wakatime/vim-wakatime', lazy = false },
 
+    { "rust-lang/rust.vim" },
+
     }
 })
 
@@ -226,6 +228,9 @@ local function open_nvim_tree()
   require("nvim-tree.api").tree.open()
 end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+-- rust.vim
+vim.g.rustfmt_autosave = 1
 
 -- theme
 vim.cmd "colorscheme iceberg"
