@@ -98,6 +98,12 @@ require("lazy").setup({
       end
     },
 
+    {
+      "folke/trouble.nvim",
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      opts = {},
+    },
+
     -- mini.nvim
     {
       "echasnovski/mini.nvim",
