@@ -60,6 +60,14 @@ require("lazy").setup({
       "neovim/nvim-lspconfig"
     },
 
+    -- nvim-cmp
+    {
+      "hrsh7th/nvim-cmp",
+      event = "InsertEnter",
+    },
+    { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
+    { "hrsh7th/cmp-emoji", event = "InsertEnter" },
+
     -- mini.nvim
     {
       "echasnovski/mini.nvim",
@@ -112,14 +120,6 @@ require("lazy").setup({
 
 -- plugins:nvim-lspconfig
 local lspconfig = require('lspconfig')
-
--- Setup language servers.
--- lspconfig.rust_analyzer.setup {
---   -- Server-specific settings. See `:help lspconfig-setup`
---   settings = {
---     ['rust-analyzer'] = {},
---   },
--- }
 
 local on_attach = function(client)
     require'completion'.on_attach(client)
