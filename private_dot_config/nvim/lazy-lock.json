@@ -1,14 +1,22 @@
 {
+  "LuaSnip": { "branch": "master", "commit": "f3b3d3446bcbfa62d638b1903ff00a78b2b730a1" },
+  "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
+  "cmp-emoji": { "branch": "main", "commit": "19075c36d5820253d32e2478b6aaf3734aeaafa0" },
+  "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "ddc-around": { "branch": "main", "commit": "645919c9f2ca3f3b95d6d21bf86317f42638073d" },
   "ddc-converter_remove_overlap": { "branch": "main", "commit": "e94330b06c47f63a46ce705927bb4deaff611c21" },
   "ddc-file": { "branch": "main", "commit": "72335138349133361e38fe7a0d320a3ff1788839" },
-  "ddc-filter-matcher_head": { "branch": "main", "commit": "16727bb785c7fdbd4c5ed7a5f3da8d2f7355f8fd" },
+  "ddc-filter-matcher_head": { "branch": "main", "commit": "17b656e38221743290bd0cd26f5b177efe318d77" },
   "ddc-sorter_rank": { "branch": "main", "commit": "fccbd5892dc57f44f07cddcbef9d465838b36cee" },
-  "ddc.vim": { "branch": "main", "commit": "d24ae8cf1b46852a3251c10e8ee1d559609d2b2f" },
-  "denops.vim": { "branch": "main", "commit": "c50865d1dc2db392370f8b7070d21885f0867c5b" },
+  "ddc.vim": { "branch": "main", "commit": "6b143f35b728cf444b541358b37393a82283b9ee" },
+  "denops.vim": { "branch": "main", "commit": "2d6c0a1fcd4aaefd973e04a16a0fdbf73452cb99" },
   "iceberg.vim": { "branch": "master", "commit": "e01ac08c2202e7544531f4d806f6893539da6471" },
-  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "lazy.nvim": { "branch": "main", "commit": "aedcd79811d491b60d0a6577a9c1701063c2a609" },
   "mini.nvim": { "branch": "main", "commit": "b5645ac6eefce8e7af9d7dd4e5e296a81cba8a10" },
-  "nvim-tree.lua": { "branch": "master", "commit": "7d1760f892951dd6a118dae1d7a1d8df5f029edf" },
-  "nvim-web-devicons": { "branch": "master", "commit": "5efb8bd06841f91f97c90e16de85e96d57e9c862" }
+  "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
+  "nvim-lspconfig": { "branch": "master", "commit": "ec7d51a619049c7c597f469f81ea199db6794651" },
+  "nvim-tree.lua": { "branch": "master", "commit": "d52fdeb0a300ac42b9cfa65ae0600a299f8e8677" },
+  "nvim-web-devicons": { "branch": "master", "commit": "0bb67ef952ea3eb7b1bac9c011281471d99a27bc" },
+  "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
+  "vim-wakatime": { "branch": "master", "commit": "285c2e4e48fb0c63ced233c00fb10a2edb3b6c94" }
 }
