@@ -233,7 +233,8 @@ local function open_nvim_tree()
   -- open the tree
   require("nvim-tree.api").tree.open()
 end
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+-- ファイルツリーを自動表示
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- rust.vim
 vim.g.rustfmt_autosave = 1
