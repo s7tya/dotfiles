@@ -159,9 +159,9 @@ require("lazy").setup({
 -- plugins:nvim-lspconfig
 local lspconfig = require('lspconfig')
 
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
+-- local on_attach = function(client)
+--     require'completion'.on_attach(client)
+-- end
 
 lspconfig.rust_analyzer.setup({
     on_attach=on_attach,
@@ -229,12 +229,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 -- plugins:nvim-tree
-local function open_nvim_tree()
-  -- open the tree
-  require("nvim-tree.api").tree.open()
-end
--- ファイルツリーを自動表示
--- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+      vim.cmd "quit"
+    end
+  end
+})
 
 -- rust.vim
 vim.g.rustfmt_autosave = 1
