@@ -1,12 +1,19 @@
 {{ if eq .chezmoi.os "darwin" }}
 
-return {
-    color_scheme = "Dracula (Official)",
-    tab_bar_at_bottom = false,
-    use_fancy_tab_bar = false,
-    window_decorations = "RESIZE",
-    font_size = 13.0,
-    default_prog = {"/opt/homebrew/bin/fish", "-l", "-c", "/opt/homebrew/bin/zellij attach --index 0 --create" },
+local wezterm = require 'wezterm'
+local config = {}
+
+config.color_scheme = "Dracula (Official)"
+config.tab_bar_at_bottom = false
+config.use_fancy_tab_bar = false
+config.window_decorations = "RESIZE"
+config.font_size = 13.0
+config.font = wezterm.font {
+  family = 'JetBrains Mono',
+  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 }
+config.default_prog = {"/opt/homebrew/bin/fish", "-l", "-c", "/opt/homebrew/bin/zellij attach --index 0 --create" }
+
+return config
 
 {{ end }}
