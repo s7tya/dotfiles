@@ -229,7 +229,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 -- plugins:nvim-tree
-vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<space>t', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   nested = true,
