@@ -1,0 +1,13 @@
+theme = "iceberg-dark"
+window-padding-x = 10
+window-padding-y = 10
+
+font-family = "JetBrains Mono NL"
+font-family = "Hiragino Kaku Gothic ProN"
+
+font-feature = -calt
+font-feature = -dlig
+macos-option-as-alt = true
+
+keybind = alt+left=unbind
+keybind = alt+right=unbind

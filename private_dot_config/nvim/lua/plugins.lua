@@ -2,16 +2,14 @@ return {
 	-- iceberg
 	{ "cocopon/iceberg.vim" },
 
+	-- lspconfig
+	{ "neovim/nvim-lspconfig" },
+
 	-- nvim-tree.lua
 	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {},
-	},
-
-	-- nvim-lspconfig
-	{
-		"neovim/nvim-lspconfig",
 	},
 
 	-- nvim-cmp
