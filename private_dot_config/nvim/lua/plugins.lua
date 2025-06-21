@@ -8,6 +8,7 @@ return {
 	-- nvim-tree.lua
 	{
 		"nvim-tree/nvim-tree.lua",
+		lazy = false,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{ "<space>t", "<cmd>NvimTreeToggle<CR>", desc = "Toggle Nvim-tree" },
@@ -16,6 +17,9 @@ return {
 			vim.g.loaded_netrw = 1
 			vim.g.loaded_netrwPlugin = 1
 			vim.opt.termguicolors = true
+		end,
+		config = function()
+			require("nvim-tree").setup({})
 		end,
 	},
 
