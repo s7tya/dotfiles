@@ -20,22 +20,17 @@ vim.opt.swapfile = false
 vim.opt.list = true
 vim.opt.listchars = { tab = ">>", trail = "-", nbsp = "+" }
 
--- nvim-tree.lua settings
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
-
 -- plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -52,25 +47,5 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
--- plugins:nvim-tree
-vim.api.nvim_set_keymap("n", "<space>t", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-
--- plugins:conform.nvim
-require("conform").setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
-    rust = { "rustfmt", lsp_format = "fallback" },
-    javascript = { "prettierd", "prettier", stop_after_first = true },
-  },
-  format_on_save = {
-    timeout_ms = 500,
-    lsp_format = "fallback",
-  },
-})
-
--- rust.vim
-vim.g.rustfmt_autosave = 1
-
 -- theme
 vim.cmd("colorscheme iceberg")
-
