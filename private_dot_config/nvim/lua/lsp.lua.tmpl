@@ -41,7 +41,23 @@ lspconfig.gopls.setup({
       },
     },
   },
+  on_attach = function(client, bufnr)
+    if client.server_capabilities.codeActionProvider then
+      local group = vim.api.nvim_create_augroup("GoOrganizeImports", { clear = true })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = group,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.code_action({
+            context = { only = { "source.organizeImports" } },
+            apply   = true,
+          })
+        end,
+      })
+    end
+  end,
 })
+
 
 lspconfig.clangd.setup({
   capabilities = capabilities,
