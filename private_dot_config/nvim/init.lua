@@ -20,6 +20,9 @@ vim.opt.swapfile = false
 vim.opt.list = true
 vim.opt.listchars = { tab = ">>", trail = "-", nbsp = "+" }
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

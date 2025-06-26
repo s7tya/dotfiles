@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
-			{ "<space>t", "<cmd>NvimTreeToggle<CR>", desc = "Toggle Nvim-tree" },
+			{ "<leader>t", "<cmd>NvimTreeToggle<CR>", desc = "Toggle Nvim-tree" },
 		},
 		init = function()
 			vim.g.loaded_netrw = 1
@@ -19,7 +19,11 @@ return {
 			vim.opt.termguicolors = true
 		end,
 		config = function()
-			require("nvim-tree").setup({})
+			require("nvim-tree").setup({
+				actions = {
+					open_file = { quit_on_open = true },
+				},
+			})
 		end,
 	},
 
@@ -96,6 +100,7 @@ return {
 	{
 		"echasnovski/mini.nvim",
 		version = "*",
+		lazy = false,
 		config = function()
 			vim.api.nvim_create_autocmd({ "InsertEnter" }, {
 				pattern = "*",
@@ -103,6 +108,24 @@ return {
 					require("mini.comment").setup({})
 					require("mini.pairs").setup({})
 					require("mini.surround").setup({})
+				end,
+			})
+
+			vim.api.nvim_create_autocmd("VimEnter", {
+				callback = function()
+					local map = require("mini.map")
+					map.setup({
+						integrations = {
+							map.gen_integration.builtin_search(),
+							map.gen_integration.diagnostic({
+								error = "DiagnosticFloatingError",
+								warn = "DiagnosticFloatingWarn",
+								info = "DiagnosticFloatingInfo",
+								hint = "DiagnosticFloatingHint",
+							}),
+						},
+					})
+					map.open()
 				end,
 			})
 		end,
@@ -117,5 +140,38 @@ return {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{
+				"<leader>ff",
+				function()
+					require("telescope.builtin").find_files()
+				end,
+				desc = "Telescope: find files",
+			},
+
+			{
+				"<leader>fg",
+				function()
+					require("telescope.builtin").live_grep()
+				end,
+				desc = "Telescope: live grep",
+			},
+
+			{
+				"<leader>fb",
+				function()
+					require("telescope.builtin").buffers()
+				end,
+				desc = "Telescope: buffers",
+			},
+
+			{
+				"<leader>fh",
+				function()
+					require("telescope.builtin").help_tags()
+				end,
+				desc = "Telescope: help tags",
+			},
+		},
 	},
 }
