@@ -129,6 +129,15 @@ return {
 				end,
 			})
 		end,
+		keys = {
+			{
+				"<leader>m",
+				function()
+					require("mini.map").toggle()
+				end,
+				desc = "Toggle minimap",
+			},
+		},
 		once = true,
 	},
 
