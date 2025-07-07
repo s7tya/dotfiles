@@ -58,6 +58,20 @@ lspconfig.gopls.setup({
   end,
 })
 
+lspconfig.zls.setup({
+  capabilities = capabilities,
+  cmd = { "zls" },
+  filetypes = { "zig", "zir" },
+  root_dir = util.root_pattern("build.zig", ".git"),
+  settings = {
+    zls = {
+      enable_autofix = true,
+      inlay_hints = { enable = true },
+      warn_style = "default",
+      enable_build_on_save = true,
+    },
+  },
+})
 
 lspconfig.clangd.setup({
   capabilities = capabilities,
@@ -87,6 +101,22 @@ lspconfig.ts_ls.setup({
     },
   },
 })
+
+lspconfig.ocamllsp.setup({
+  capabilities = capabilities,
+  cmd = { "ocamllsp" },
+  filetypes = { "ocaml", "ocamlinterface", "ocamllex", "reason" },
+  root_dir = util.root_pattern("*.opam", "dune-project", ".git"),
+  settings = {
+    ocamllsp = {
+      codelens   = { enable = true },
+      inlayHints = { enable = true },
+      diagnostics = { enable = true },
+      formatting = { enable = true },
+    },
+  },
+})
+
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
